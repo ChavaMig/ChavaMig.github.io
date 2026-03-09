@@ -107,3 +107,16 @@ function renderRepos(repos, container) {
 document.addEventListener('DOMContentLoaded', () => {
     fetchGitHubRepos();
 });
+
+// Cursor Blob Follow Effect
+const cursorBlob = document.getElementById('cursor-blob');
+if (cursorBlob) {
+    document.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+
+        // Smooth follow animation
+        cursorBlob.animate({
+            transform: `translate(${clientX}px, ${clientY}px)`
+        }, { duration: 3000, fill: "forwards" });
+    });
+}

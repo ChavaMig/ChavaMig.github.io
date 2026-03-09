@@ -23,6 +23,27 @@ body {
     overflow-x: hidden;
 }
 
+/* Custom Cursor Blob */
+#cursor-blob {
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(88, 166, 255, 0.3) 0%, rgba(88, 166, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(60px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+}
+
+body:hover #cursor-blob {
+    opacity: 1;
+}
+
 /* Background effects */
 body::before {
     content: '';
@@ -37,7 +58,10 @@ body::before {
 }
 
 /* Typography elements */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     letter-spacing: -0.05em;
     margin-bottom: 0.5rem;
 }
